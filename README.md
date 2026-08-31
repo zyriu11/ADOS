@@ -1,2 +1,75 @@
-# ADOS
-its a disk operating system
+#include <std_disclaimer.h>
+/* Your warranty is now void.
+I am not responsible for bricked BIOSes,
+dead IDE drives, thermonuclear war,
+or you getting fired because you installed
+this onto your office computer. Please do
+some research if you have any concerns
+about features included in this OS before
+installing it! YOU are choosing to make 
+these modifications, and if you point the
+finger at me for messing up your device,
+I will laugh at you. */
+You have been warned, let's continue(sorry i had to lmao).
+Welcome to ADOS, which is A Disk Operating System, hence the name.
+Features:
+	- Read/Write ATA driver
+	- Kernel panic
+	- Run executables from disk
+	- PS/2 driver
+	- FAT32 FILESYSTEM!!!!!
+Build process:
+	Prerequesties:
+		- A cross compiler (i686-elf)
+		- Make
+		- xorriso
+		- Optionally: QEMU for testing
+		
+	Building is really simple. Do a 'make kernel clean' to generate the boot.iso image.
+	The kernel binary is located at isofiles/boot/ados.
+	To test it in QEMU, do a 'make test'. Make sure that in the working directory there
+	is a disk.img raw image file that contains a valid FAT32 partition.
+Installation:
+	This section is a stub, as there is no installation process.
+	Burn the iso file onto a CD-R disc or flash it onto a pendrive.
+	Note: this operating system uses BIOS functions unavailable in UEFI mode. Make
+			 sure you have a PC BIOS compatible device with any hard drives running in
+			 IDE mode, and a ps/2 keyboard plugged in or a USB keyboard in legacy mode.
+Usage:
+	Upon booting, you get put into a command prompt that looks like this:
+	
+			Cleared the screen
+			Initializing PICs...
+			Detecting master hard drive...
+			ATA drive detected in PIO mode!
+			Available memory: 3072 KB
+			
+			Welcome to ADOS!
+			>_
+			
+	Here, you can type commands.
+	
+	There's a list of commands:
+	
+		- PANIC
+			Trigger a kernel panic for testing purposes.
+			
+		- HELP
+			Show list of commands.
+			
+		- LS
+			list directory '/'
+		
+	If the command you written doesn't exist, you will get a message:
+		[COMMAND]: Command not found.
+	
+	If the operating system runs into a critical error, it will trigger what's known as a kernel panic. It looks like this:
+KERNEL PANIC!!! [PANIC MESSAGE]
+Refer to the source code for more information,
+or ask us on the discord server: tklab.eu1.netbird.services/ados/.
+Version: [KERNEL VERSION]
+When you get a panic, feel free to look at the source code to maybe try to find the problem,
+or just ask me on the discord server: tklab.eu1.netbird.services/ados/ . Even if you don't have a
+problem with this OS, please join the server, i'd love you to come!
+Cheers,
+zyriu1
